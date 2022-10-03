@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+    string nome = "Sebastiano";
+    string cognome = "Visco";
+
+    int Stampa(int n){
+        int somma = 0;
+        for( int i = 1; i <= n; i++){
+            somma += i;
+        }
+        return somma;
+    }
+
+    int Conta(){
+        string divina = "nel mezzo del cammin di nostra vita";
+        int count = 0;
+        for (int i = 0; i < divina.Length; i++){
+            if(divina[i].ToString() ==  "a"){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+<h2>@nome @cognome</h2>
+
+<p>ES 1. La somma dei numeri: <span>@Stampa(5)</span></p>
+
+<p>ES 2. La onta delle lettere a: <span>@Conta()</span></p>
