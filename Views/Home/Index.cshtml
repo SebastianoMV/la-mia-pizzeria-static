@@ -1,22 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     Layout = null;
-    string[] Margherita = { "Margherita", "Pomodoro, mozzarella", "", "5"};
-    string[] Marinara = { "Marinara", "Pomodoro, aglio", "", "5" };
-    string[] Patate = { "Patate", "Pomodoro, mozzarella, patate", "", "6" };
-    string[] Zucchine = { "Zucchine", "Pomodoro, mozzarella, zucchine", "", "6" };
+
+    string[] Margherita = { "Margherita", "Pomodoro, mozzarella", "image", "5"};
+    string[] Marinara = { "Marinara", "Pomodoro, aglio", "image", "5" };
+    string[] Patate = { "Patate", "Pomodoro, mozzarella, patate", "image", "6" };
+    string[] Zucchine = { "Zucchine", "Pomodoro, mozzarella, zucchine", "imgae", "6" };
     List<Array> Pizze = new List<Array>();
     Pizze.Add(Margherita);
     Pizze.Add(Marinara);
     Pizze.Add(Patate);
     Pizze.Add(Zucchine);
 }
+
+
+
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 
 <table class="table container">
     <thead>
         <tr>
-            <th scope="col">#</th>
+           
             <th scope="col">Nome</th>
             <th scope="col">Descrizione</th>
             <th scope="col">Foto</th>
@@ -24,26 +28,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Nome</td>
-            <td>desc</td>
-            <td>foto</td>
-            <td>prezzo</td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>Nome</td>
-            <td>desc</td>
-            <td>foto</td>
-            <td>prezzo</td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>Nome</td>
-            <td>desc</td>
-            <td>foto</td>
-            <td>prezzo</td>
-        </tr>
+        @foreach (Array pizza in Pizze)
+        {
+           
+            <tr>
+                
+                @foreach(string text in pizza){
+                    <td>@text</td>
+                }
+       
+            </tr>
+    
+        }
     </tbody>
 </table>
