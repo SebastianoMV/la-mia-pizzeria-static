@@ -3,6 +3,16 @@
     ViewData["Title"] = "Home Page";
     string nome = "Sebastiano";
     string cognome = "Visco";
+    List<int> numeri = new List<int>(); 
+    for(int i = 0; i<20; i++){
+        numeri.Add(new Random().Next(90));
+    }
+
+    string localDate = DateTime.Now.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
+    string date7days = DateTime.Now.AddDays(-7).ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss");
+    string dayofWeek = DateTime.Now.ToString("dddd");
+    string dayInOneYear = DateTime.Now.AddYears(1).ToString("dddd");
+
 
     int Stampa(int n){
         int somma = 0;
@@ -22,9 +32,30 @@
         }
         return count;
     }
+
+
 }
-<h2>@nome @cognome</h2>
+<h2><span>Es 1.</span> @nome @cognome</h2>
 
-<p>ES 1. La somma dei numeri: <span>@Stampa(5)</span></p>
+<div>ES 2. La somma dei numeri: <span>@Stampa(5)</span></div>
 
-<p>ES 2. La onta delle lettere a: <span>@Conta()</span></p>
+<div>ES 3. La onta delle lettere a: <span>@Conta()</span></div>
+
+<div>ES 4. 
+    @foreach(int n in numeri){
+        if(n >=20 && n<=70){
+        <span>@n </span>
+        }
+    }
+</div>
+
+<div>ES 5. L'ora esatta @localDate</div>
+
+<ul>ES 6.
+    <li>a. Ora esatta 7 giorni fa: @date7days</li>
+    <li>b. Oggi è: @dayofWeek</li>
+    <li>b. Fra un anno sarà: @dayInOneYear</li>
+
+</ul>
+
+
